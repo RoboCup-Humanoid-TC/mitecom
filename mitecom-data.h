@@ -165,6 +165,9 @@ enum MixedTeamKeyEnum {
     /// belief of relative position of the ball (0..255), with 0 = no confidence
 	/// and 255 = highest confidence
 	BALL_BELIEF                                  =   MITECOM_RANGE_COGNITION + 6,
+	
+	/// Current ball velocity in mm/sec
+	BALL_VELOCITY							     =   MITECOM_RANGE_COGNITION + 31,
 
 	/// relative position of opposing goal to robot, x-coordinate (in mm)
 	OPPGOAL_RELATIVE_X                           =   MITECOM_RANGE_COGNITION + 7,
@@ -259,6 +262,7 @@ enum MixedTeamKeyEnum {
     // Belief of accuracy of this robots position, with 0 = no confidence
 	// and 255 = highest confidence
     TEAM_ROBOT_C_BELIEF                             = MITECOM_RANGE_COGNITION + 30,
+        
 
 	/* ******************************************************************
 	** ROBOT CAPABILITIES
@@ -283,6 +287,18 @@ enum MixedTeamKeyEnum {
 	// Can be used generally to communicate a basic strategy.
 	// Uses MixedTeamSideEnum
     OFFENSIVE_SIDE                               =  MITECOM_RANGE_STRATEGIES + 1,
+    
+    /// absolute position on the field, x-coordinate (in mm) the robot is walking to
+    WALKING_TO_X_ABSOLUTE                        =  MITECOM_RANGE_STRATEGIES + 2,
+    
+    /// absolute position on the field, y-coordinate (in mm) the robot is walking to
+    WALKING_TO_Y_ABSOLUTE                        =  MITECOM_RANGE_STRATEGIES + 3,
+    
+    /// absolute position on the field, x-coordinate (in mm) the robot is about to shoot to
+    SHOOTING_TO_X_ABSOLUTE                        =  MITECOM_RANGE_STRATEGIES + 4,
+    
+    /// absolute position on the field, y-coordinate (in mm) the robot is about to shoot to
+    SHOOTING_TO_Y_ABSOLUTE                        =  MITECOM_RANGE_STRATEGIES + 5,
 };
 
 typedef MixedTeamKeyEnum MixedTeamKey;
